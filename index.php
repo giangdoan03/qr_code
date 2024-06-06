@@ -9,7 +9,7 @@ $transfer_content = 'NGUYEN VAN A 0912345678';
 // Dữ liệu gửi đi
 $data = [
     "accountNo" => "244933718",
-    "accountName" => "QUY VAC XIN PHONG CHONG COVID",
+    "accountName" => "DOAN VAN GIANG",
     "acqId" => "970432",
     "addInfo" => $transfer_content,
     "amount" => "79000",
