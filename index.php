@@ -4,7 +4,7 @@ $client_id = '8746dbc3-9fd3-48c1-9822-e290c8771046';
 $api_key = 'c1cbb283-5450-4584-abb7-a68cf30a8dc2';
 $url = 'https://api.vietqr.io/v2/generate';
 
-$transfer_content = 'NGUYEN VAN A 0912345678';
+$transfer_content = 'DAT chuyen khoan';
 
 // Dữ liệu gửi đi
 $data = [
@@ -12,12 +12,16 @@ $data = [
     "accountName" => "DOAN VAN GIANG",
     "acqId" => "970432",
     "addInfo" => $transfer_content,
-    "amount" => "79000",
+    "amount" => "1000000",
     "template" => "compact"
 ];
 
 // Chuyển dữ liệu thành JSON
 $data_json = json_encode($data);
+
+echo "<pre>";
+print_r($data_json);
+echo "</pre>";
 
 // Khởi tạo cURL
 $ch = curl_init($url);
@@ -36,7 +40,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
 $response = curl_exec($ch);
 
 // Kiểm tra lỗi
-if(curl_errno($ch)) {
+if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
 } else {
     // Chuyển đổi kết quả từ JSON sang mảng PHP
